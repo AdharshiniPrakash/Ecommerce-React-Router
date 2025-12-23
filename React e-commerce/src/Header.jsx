@@ -2,7 +2,7 @@ import React from 'react';
 import cartImg from './assets/cart.svg';
 import logo from './assets/logo.png';
 
-function Header() {
+function Header(props) {
   return (
     <header className="site-header">
       <div className="header-inner container">
@@ -18,7 +18,7 @@ function Header() {
           <div className="search">
             <input placeholder="Search" />
           </div>
-          <button className="icon-btn" aria-label="cart"><img src={cartImg} alt="Cart icon" /></button>
+          <button className="icon-btn" aria-label="cart" data-count={props.count} onClick={props.togglePopup}><img src={cartImg} alt="Cart icon" /></button>
         </div>
       </div>
     </header>

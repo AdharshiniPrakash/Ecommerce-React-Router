@@ -5,14 +5,21 @@ This is a simple Ecommerce web application built with React and Vite. The app al
 
 Features
 --------
-Product Listing: Browse a variety of products displayed as cards.
-Category Section: Filter products by categories for easier navigation.
-Product Details: View product information, including images, price, and description.
-Add to Cart: Add products to the shopping cart and view the cart list.
-Cart Management: Increase, decrease, or remove items from the cart.
-Popup Notifications: Get instant feedback for actions like adding or removing items.
-Responsive Design: Works seamlessly on desktop and mobile devices.
-Header & Hero Section: Attractive landing section with navigation.
+Product Listing:    Browse a variety of products displayed as cards.
+
+Category Section:   Filter products by categories for easier navigation.
+
+Product Details:    View product information, including images, price, and description.
+
+Add to Cart:    Add products to the shopping cart and view the cart list.
+
+Cart Management:    Increase, decrease, or remove items from the cart.
+
+Popup Notifications:    Get instant feedback for actions like adding or removing items.
+
+Responsive Design:  Works seamlessly on desktop and mobile devices.
+
+Header & Hero Section:  Attractive landing section with navigation.
 
 Folder Structure
 ----------------
@@ -72,8 +79,11 @@ Make sure to configure your host to serve index.html for all routes (for client-
 Technologies Used
 -----------------
 React
+
 Vite
+
 JavaScript
+
 CSS
 
 License

@@ -27,10 +27,10 @@
   border-radius: 10px;
 }
 .nav {
-  display: none;
+  display: flex;
   gap: 18px;
   color: #666;
-} /* hide for now; flex for later */
+} 
 .nav a {
   cursor: default;
   color: #777;

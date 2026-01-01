@@ -9,9 +9,24 @@ function Header(props) {
         <div className="brand"><img src={logo} alt="Logo" /></div>
 
         <nav className="nav">
-          <a>Home</a>
-          <a>Products</a>
-          <a>Contact</a>
+          <Link
+            to={""}
+            aria-current="page"
+          >
+            Home
+          </Link>
+          <Link
+            to={"/products"}
+            aria-current="page"
+          >
+            Products
+          </Link>
+          <Link
+            to={"/contact"}
+            aria-current="page"
+          >
+            Contact
+          </Link>
         </nav>
 
         <div className="header-actions">

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router";
 import cartImg from './assets/cart.svg';
 import logo from './assets/logo.png';
 
@@ -6,7 +7,7 @@ function Header(props) {
   return (
     <header className="site-header">
       <div className="header-inner container">
-        <div className="brand"><img src={logo} alt="Logo" /></div>
+        <Link to={""} aria-current="page" className="brand"><img src={logo} alt="Logo" /></Link>
 
         <nav className="nav">
           <Link
@@ -33,7 +34,15 @@ function Header(props) {
           <div className="search">
             <input placeholder="Search" />
           </div>
-          <button className="icon-btn" aria-label="cart" data-count={props.count} onClick={props.togglePopup}><img src={cartImg} alt="Cart icon" /></button>
+          <Link
+            className="icon-btn"
+            aria-label="cart"
+            to={"/cart"}
+            aria-current="page"
+            data-count={props.count}
+          >
+            <img src={cartImg} alt="Cart icon" />
+          </Link>
         </div>
       </div>
     </header>

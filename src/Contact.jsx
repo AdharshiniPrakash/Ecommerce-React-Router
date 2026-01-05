@@ -2,92 +2,51 @@ const Contact = () => {
   return (
     <>
 
-      <section className="bg-[#FAFAFA]">
-        <div className="max-w-5xl mx-auto px-6 py-16">
-         
-          <div className="text-center">
-            <h1 className="text-3xl md:text-4xl font-semibold">
-              Get in touch
-            </h1>
-            <p className="mt-3 text-gray-600">
-              Have a question about a product, order, or partnership? We’re here
-              to help.
+      <section className="contact-page">
+        <div className="contact-container">
+          <header className="contact-header">
+            <h1>Get in touch</h1>
+            <p>
+              Have a question about a product, order, or partnership?
+              We’re here to help.
             </p>
+          </header>
+
+          <div className="contact-cards">
+            <div className="contact-card">
+              <h3>Email</h3>
+              <p>support@everydayco.in</p>
+              <span>We usually respond within 24 hours</span>
+            </div>
+            <div className="contact-card">
+              <h3>Phone</h3>
+              <p>+91 XXXXX XXXXX</p>
+              <span>Mon–Sat, 10 AM – 6 PM</span>
+            </div>
+            <div className="contact-card">
+              <h3>Location</h3>
+              <p>Chennai, India</p>
+              <span>Serving customers across India</span>
+            </div>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6 mt-12">
-            {[
-              {
-                title: "Email",
-                desc: "support@everydayco.in",
-                sub: "We usually respond within 24 hours."
-              },
-              {
-                title: "Phone",
-                desc: "+91 XXXXX XXXXX",
-                sub: "Mon–Sat, 10 AM – 6 PM"
-              },
-              {
-                title: "Location",
-                desc: "Chennai, India",
-                sub: "Serving customers across India"
-              }
-            ].map((item, index) => (
-              <div
-                key={index}
-                className="bg-white border rounded-xl p-6 text-center"
-              >
-                <h3 className="font-semibold text-lg">{item.title}</h3>
-                <p className="mt-2">{item.desc}</p>
-                <p className="mt-1 text-gray-500 text-sm">{item.sub}</p>
-              </div>
-            ))}
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-10 mt-16">
-            <form className="bg-white border rounded-xl p-6 space-y-4">
-              <input
-                type="text"
-                placeholder="Name"
-                className="w-full border rounded-lg px-4 py-3"
-              />
-              <input
-                type="email"
-                placeholder="Email"
-                className="w-full border rounded-lg px-4 py-3"
-              />
-              <select className="w-full border rounded-lg px-4 py-3">
+          <div className="contact-form-section">
+            <form className="contact-form">
+              <input placeholder="Name" />
+              <input placeholder="Email" />
+              <select>
                 <option>Subject</option>
                 <option>Order Query</option>
                 <option>Product Question</option>
-                <option>Partnership</option>
               </select>
-              <textarea
-                rows="4"
-                placeholder="Message"
-                className="w-full border rounded-lg px-4 py-3"
-              ></textarea>
-
-              <button className="bg-[#6E8B7D] text-white w-full py-3 rounded-lg hover:opacity-90">
-                Send Message
-              </button>
+              <textarea placeholder="Message" rows="4" />
+              <button className="primary-btn">Send Message</button>
             </form>
 
-            <div>
-              <h3 className="text-xl font-semibold">
-                We usually respond within one business day
-              </h3>
-              <p className="mt-3 text-gray-600">
-                Your information is safe with us and will never be shared.
-              </p>
-
-              <div className="mt-6 rounded-xl overflow-hidden border">
-                <img
-                  src="/images/map-placeholder.png"
-                  alt="Map"
-                  className="w-full object-cover"
-                />
-              </div>
+            <div className="contact-side">
+              <h3>We usually respond within one business day</h3>
+              <p>Your information is safe and will never be shared.</p>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15547.564999589107!2d80.22835410759328!3d13.04259364646764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a526655a5da2371%3A0x4954f49743f04af0!2sT.%20Nagar%2C%20Chennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1767626294666!5m2!1sen!2sin" width="600" height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
           </div>
         </div>

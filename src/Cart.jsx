@@ -1,6 +1,6 @@
 import CartList from "./CartList";
 
-function Popup({showPopUp, closePopUp, cartItems}) {
+function Cart({showPopUp, closePopUp, cartItems}) {
 
     let cartTotal = 0;
 
@@ -38,4 +38,4 @@ function Popup({showPopUp, closePopUp, cartItems}) {
     );
 };
 
-export default Popup;
+export default Cart;

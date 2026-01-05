@@ -1,8 +1,11 @@
 import { useState } from 'react';
+import { CartContext } from "./CartContext";
 import star from './assets/star.svg';
 
 function ProductCard({ product, addToCart, removeFromCart }) {
   const [btnText, setBtnText] = useState('Add to Cart');  
+
+  const { addToCart } = useContext(CartContext);
 
   const updateCart = () => {
     if (btnText === 'Remove from Cart') {

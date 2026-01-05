@@ -1,9 +1,11 @@
 import React from 'react';
+import { CartContext } from "./CartContext";
 import { Link } from "react-router";
 import cartImg from './assets/cart.svg';
 import logo from './assets/logo.png';
 
 function Header(props) {
+  const { cartCount } = useContext(CartContext);
   return (
     <header className="site-header">
       <div className="header-inner container">
@@ -39,7 +41,7 @@ function Header(props) {
             aria-label="cart"
             to={"/cart"}
             aria-current="page"
-            data-count={props.count}
+            data-count={cartCount}
           >
             <img src={cartImg} alt="Cart icon" />
           </Link>

@@ -1,23 +1,21 @@
 import CartList from "./CartList";
+import { CartContext } from "./CartContext";
 
-function Cart({showPopUp, closePopUp, cartItems}) {
+function Cart() {
 
+    const { cartItems} = React.useContext(CartContext);
     let cartTotal = 0;
-
     cartItems.forEach(element => {
         let itemTotal = 0;
         itemTotal += (element.price * element.quantity);
         cartTotal += itemTotal;
     });
 
-    const className = `popup-overlay ${showPopUp === true ? 'show-popup' : ''}`;
-
     return (
         <div className={className}>
             <div className="popup-content">
                 <div className='cart-header'>
                     <div className='cart-title'>Your Cart</div>
-                    <div className='continue-shopping' onClick={closePopUp} >Continue Shopping</div>
                 </div>
                 <div className="cart-content">
                     {

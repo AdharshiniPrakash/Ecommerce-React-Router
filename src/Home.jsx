@@ -1,7 +1,8 @@
 import ProductPreview from "./ProductPreview";
+import { Link } from "react-router";
 import Story from "./assets/section.png";
 
-function Home({productsData}) {
+function Home({ productsData }) {
 
   return (
     <>
@@ -32,13 +33,18 @@ function Home({productsData}) {
       <section className="home-featured">
         <div className="home-section-header">
           <h2>Featured Picks</h2>
-          <a href="/products">View All →</a>
+          <Link
+            aria-label="View all"
+            to={"/products"}
+          >
+            View All Products →
+          </Link>
         </div>
 
         <div className="home-featured-grid">
-         {productsData.map((item) => (
-              <ProductPreview key={item.id} data={item} />
-            ))}
+          {productsData.map((item) => (
+            <ProductPreview key={item.id} data={item} />
+          ))}
         </div>
       </section>
 

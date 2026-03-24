@@ -1,4 +1,4 @@
-import React from 'react';
+import { useContext} from 'react';
 import { CartContext } from "./CartContext";
 import { Link } from "react-router";
 import cartImg from './assets/cart.svg';

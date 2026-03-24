@@ -36,27 +36,15 @@ function App() {
     getData();
   }, []);
 
-  const addCartItem = (product) => {
-    setCartItems([...cartItems, product]);
-  };
-
-  const removeCartItem = (product) => {
-    setCartItems((prev) => prev.filter((item) => item.id !== product.id));
-  };
-
   return (
     <div className="app-root">
       <Header count={cartItems.length} togglePopup={togglePopup} />
       <Hero />
       <main className="container">
         {categories.map((cat, index) => (
-          <CategorySection key={index} catKey={cat.category} title={cat.category} products={cat.items} addToCart={addCartItem} removeFromCart={removeCartItem} />
+          <CategorySection key={index} catKey={cat.category} title={cat.category} products={cat.items} />
         ))}
       </main>
-      {
-        cartItems.length > 0 &&
-        <Popup showPopUp={showPopUp} closePopUp={togglePopup} cartItems={cartItems} ></Popup>
-      }
     </div>
   );
 }

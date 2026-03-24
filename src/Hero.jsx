@@ -10,8 +10,15 @@ function Hero() {
         src={banner}
       />
       <div className="hero-overlay container">
-        <h1>12 Days of Deals</h1>
-        <p>Make the season merrier with new deals and gifts — now through December 19.</p>
+        <div className="home-hero-text">
+          <h1>
+            Everyday essentials,<br /> thoughtfully curated.
+          </h1>
+          <p>
+            Premium products designed for modern, everyday living — quality
+            you’ll notice, simplicity you’ll love.
+          </p>
+        </div>
       </div>
     </section>
   )

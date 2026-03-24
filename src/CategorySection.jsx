@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import ProductCard from './ProductCard';
 import Sort from './assets/sort.svg';
 
-function CategorySection({ catKey, title, products, updateCartCount, addToCart, removeFromCart }) {
+function CategorySection({ catKey, title, products }) {
   const [selectedValue, setSelectedValue] = useState('default');
   const [sortedProducts, setSortedProducts] = useState(products);
 
@@ -40,7 +40,7 @@ function CategorySection({ catKey, title, products, updateCartCount, addToCart, 
       <div className="container">
         <div className="product-grid">
           {sortedProducts.map((p) => (
-            <ProductCard key={p.id} product={p} addToCart={addToCart} removeFromCart={removeFromCart} />
+            <ProductCard key={p.id} product={p} />
           ))}
         </div>
       </div>

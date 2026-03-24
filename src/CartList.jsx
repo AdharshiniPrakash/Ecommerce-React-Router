@@ -1,27 +1,31 @@
 import { useState } from "react";
-import close from './assets/close.svg';
 
-function CartList({product}) {
-    const [quantity, setQuantity] = useState(product.quantity);
+function CartList({ product, updateItem }) {
+  const [quantity, setQuantity] = useState(product.quantity);
+
+  const handleQuantityChange = (newQuantity) => {
+    setQuantity(newQuantity);
+    updateItem(product.id, newQuantity);
+  };
 
   return (
     <div className="cart-item" key={product.id}>
-      <div className="item-remove"><img src={close} /></div>
 
       <div className="item-details">
         <img src={product.image} alt={product.title} className="item-image" />
         <div className="item-info">
           <h4>{product.title}</h4>
           <p>{product.description.substring(0, 100) + "..."}</p>
+          <div className="item-remove">Remove</div>
         </div>
       </div>
 
       <div className="item-price">₹{product.price.toLocaleString()}</div>
 
       <div className="item-quantity-control">
-        <button className="quantity-btn" onClick={() => setQuantity(quantity-1)}>-</button>
+        <button className="quantity-btn" onClick={() => handleQuantityChange(quantity - 1)}>-</button>
         <div className="quantity-box">{quantity}</div>
-        <button className="quantity-btn" onClick={() => setQuantity(quantity+1)}>+</button>
+        <button className="quantity-btn" onClick={() => handleQuantityChange(quantity + 1)}>+</button>
       </div>
 
       <div className="item-total-price">
@@ -30,6 +34,7 @@ function CartList({product}) {
           ₹{product.price.toLocaleString()}
         </div>
       </div>
+
     </div>
   );
 }

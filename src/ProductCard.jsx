@@ -3,18 +3,15 @@ import { CartContext } from "./CartContext";
 import star from './assets/star.svg';
 
 function ProductCard({ product}) {
-  const [btnText, setBtnText] = useState('Add to Cart');  
-
-  const { addToCart } = useContext(CartContext);
+  const { addToCart, removeFromCart, cartItems } = useContext(CartContext);
+  const inCart = cartItems.some((item) => item.id === product.id);
+  const btnText = inCart ? 'Remove from Cart' : 'Add to Cart';
 
   const updateCart = () => {
-    if (btnText === 'Remove from Cart') {
-      removeFromCart(product);
-      setBtnText('Add to Cart');
-    }
-    else {
+    if (inCart) {
+      removeFromCart(product.id);
+    } else {
       addToCart(product);
-      setBtnText('Remove from Cart');
     }
   };
 

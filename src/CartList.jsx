@@ -1,12 +1,22 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-function CartList({ product, updateItem }) {
+function CartList({ product, updateItem, removeFromCart }) {
   const [quantity, setQuantity] = useState(product.quantity);
 
+  useEffect(() => {
+    setQuantity(product.quantity);
+  }, [product.quantity]);
+
   const handleQuantityChange = (newQuantity) => {
+    if (newQuantity <= 0) {
+      removeFromCart(product.id);
+      return;
+    }
     setQuantity(newQuantity);
     updateItem(product.id, newQuantity);
   };
+
+  const handleRemove = () => removeFromCart(product.id);
 
   return (
     <div className="cart-item" key={product.id}>
@@ -16,7 +26,7 @@ function CartList({ product, updateItem }) {
         <div className="item-info">
           <h4>{product.title}</h4>
           <p>{product.description.substring(0, 100) + "..."}</p>
-          <div className="item-remove">Remove</div>
+          <div className="item-remove" onClick={handleRemove}>Remove</div>
         </div>
       </div>
 

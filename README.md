@@ -5,21 +5,17 @@ This is a simple Ecommerce web application built with React and Vite. The app al
 
 Features
 --------
-Product Listing:    Browse a variety of products displayed as cards.
-
-Category Section:   Filter products by categories for easier navigation.
-
-Product Details:    View product information, including images, price, and description.
-
-Add to Cart:    Add products to the shopping cart and view the cart list.
-
-Cart Management:    Increase, decrease, or remove items from the cart.
-
-Popup Notifications:    Get instant feedback for actions like adding or removing items.
-
-Responsive Design:  Works seamlessly on desktop and mobile devices.
-
-Header & Hero Section:  Attractive landing section with navigation.
+- Product Listing: Browse products fetched from Fake Store API and shown as cards.
+- Category Section: Products grouped by category with sorting by rating/price.
+- Product Details: card shows image, title, price, description, rating.
+- Add / Remove Cart: "Add to Cart" toggles to "Remove from Cart" based on cart state.
+- Cart Persistence: cart data managed via React Context and available across routes.
+- Quantity Controls: Increment/decrement item quantity in cart; removing when qty reaches 0.
+- Per-Item Total: cart item row displays price * quantity.
+- Cart Summary: subtotal, 10% discount, final total amount displayed in cart page.
+- Responsive UI: Grid and layout adapt for desktop and mobile.
+- Routing: Home, Products, Contact, Cart routes via React Router.
+- Clean UX: buttons update with cart state and cart icon shows item count.
 
 Folder Structure
 ----------------

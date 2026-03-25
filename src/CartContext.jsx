@@ -19,10 +19,26 @@ export function CartProvider({ children }) {
     });
   };
 
+  const updateItem = (id, quantity) => {
+    setCartItems((prev) =>
+      prev
+        .map((item) =>
+          item.id === id ? { ...item, quantity: Math.max(0, quantity) } : item
+        )
+        .filter((item) => item.quantity > 0)
+    );
+  };
+
+  const removeFromCart = (id) => {
+    setCartItems((prev) => prev.filter((item) => item.id !== id));
+  };
+
   const cartCount = cartItems.reduce((sum, item) => sum + item.quantity, 0);
 
   return (
-    <CartContext.Provider value={{ cartItems, addToCart, cartCount }}>
+    <CartContext.Provider
+      value={{ cartItems, addToCart, updateItem, removeFromCart, cartCount }}
+    >
       {children}
     </CartContext.Provider>
   );
